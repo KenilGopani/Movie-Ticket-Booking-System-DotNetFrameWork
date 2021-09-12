@@ -1,0 +1,47 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="MovieTicketBooking.Sign_Up" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"/>
+    <title>sign-up</title>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div class="container-fluid">
+        <div class="row vh-100 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+                    <h1 class="text-center mb-4">Sign-up</h1>
+                    <div class="mb-3">
+                        <asp:TextBox runat="server" cssClass="form-control" ID="FirstName" placeholder="First Name" required=""></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+
+                       <asp:TextBox runat="server" cssClass="form-control" ID="LastName" placeholder="Last Name" required=""></asp:TextBox>
+                    </div>
+                     <div class="mb-3">
+
+                        <asp:TextBox runat="server" cssClass="form-control" ID="Email" placeholder="Email" TextMode="Email" required=""></asp:TextBox>
+                    </div>
+                     <div class="mb-3">
+
+                       <asp:TextBox runat="server" cssClass="form-control" ID="MobileNum" placeholder="Mobile Number" MaxLength="10" TextMode="Phone" required=""></asp:TextBox>
+                    </div>
+                     <div class="mb-3">
+
+                        <asp:TextBox runat="server" cssClass="form-control" ID="Password" placeholder="Password" TextMode="Password" required=""></asp:TextBox>
+                    </div>
+                     <div class="mb-3">
+                       <asp:TextBox runat="server" cssClass="form-control" ID="CPassword" placeholder="Confirm Password" TextMode="Password" required=""></asp:TextBox>
+                    </div>
+                    <button type="reset" class="btn btn-primary w-100 mb-3" id="Reset">Reset</button>
+                    <asp:Button runat="server" cssClass="btn btn-primary w-100 mb-3" ID="SignUp" Text="Sign-up" OnClick="SignUp_Click"/>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="Password" ControlToValidate="CPassword" ErrorMessage="CompareValidator" ForeColor="Red">Password &amp; Confirm Password must be match.</asp:CompareValidator>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </form>
+</body>
+</html>
