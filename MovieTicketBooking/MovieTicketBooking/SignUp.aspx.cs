@@ -16,18 +16,32 @@ namespace MovieTicketBooking
 
         protected void SignUp_Click(object sender, EventArgs e)
         {
-            MovieContext db = new MovieContext();
-            User user = new User()
+            if (Password.Text.Equals(CPassword.Text))
             {
-                FirstName = FirstName.Text,
-                LastName = LastName.Text,
-                Email = Email.Text,
-                MobileNum = Int32.Parse(MobileNum.Text),
-                Password = Password.Text
-            };
-
-            db.Users.Add(user);
-            db.SaveChanges();
+                MovieContext db = new MovieContext();
+                User user = db.Users.Where(u => u.Email.Equals(Email.Text)).FirstOrDefault();
+                if(user == null)
+                {
+                    user = new User()
+                    {
+                        FirstName = FirstName.Text,
+                        LastName = LastName.Text,
+                        Email = Email.Text,
+                        MobileNum = Int64.Parse(MobileNum.Text),
+                        Password = Password.Text
+                    };
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    Response.Redirect("~/SignIn.aspx");
+                }
+                else
+                {
+                    Error.Text = "Email already taken";
+                    return;
+                }
+            }
+            else
+                Error.Text = "Password and confirm password doesn't match";
         }
     }
 }
