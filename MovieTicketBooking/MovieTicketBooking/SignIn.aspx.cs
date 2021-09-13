@@ -14,12 +14,12 @@ namespace MovieTicketBooking
 
         }
 
-        protected void Signin_Click(object sender, EventArgs e)
+        protected void SignIn_Click(object sender, EventArgs e)
         {
             MovieContext db = new MovieContext();
             var user = db.Users.Where(u => u.Email.Equals(Email.Text) && u.Password.Equals(Password.Text)).FirstOrDefault();
             if (user != null)
-                Response.Redirect("~/Home.aspx");
+                Response.Redirect("~/home.aspx");
             else
                 Error.Text = "Email or Password is Invalid";
         }
