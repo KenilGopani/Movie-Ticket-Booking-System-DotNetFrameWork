@@ -32,7 +32,7 @@ namespace MovieTicketBooking
                     };
                     db.Users.Add(user);
                     db.SaveChanges();
-                    Response.Redirect("~/SignIn.aspx");
+                    Response.Redirect("~/signIn.aspx");
                 }
                 else
                 {

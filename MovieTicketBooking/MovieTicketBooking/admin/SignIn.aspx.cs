@@ -21,12 +21,12 @@ namespace MovieTicketBooking.admin
             db.SaveChanges();
         }
 
-        protected void Signin_Click(object sender, EventArgs e)
+        protected void SignIn_Click(object sender, EventArgs e)
         {
             MovieContext db = new MovieContext();
             var admin = db.Admins.Where(a => a.Email.Equals(Email.Text) && a.Password.Equals(Password.Text)).FirstOrDefault();
             if (admin != null)
-                Response.Redirect("~/admin/Home.aspx");
+                Response.Redirect("~/admin/home.aspx");
             else
                 Error.Text = "Email or Password is Invalid";
         }

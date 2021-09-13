@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="MovieTicketBooking.Sign_Up" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signUp.aspx.cs" Inherits="MovieTicketBooking.Sign_Up" %>
 
 <!DOCTYPE html>
 
