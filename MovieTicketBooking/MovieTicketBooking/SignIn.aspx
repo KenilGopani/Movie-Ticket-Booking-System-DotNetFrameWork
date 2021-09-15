@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.SignIn" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.SignIn" %>
 
-<!DOCTYPE html>
+<asp:Content runat="server" ContentPlaceHolderID="Title">
+    SignIn
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-    <title>sign-in</title>
-</head>
-<body>
+<asp:Content runat="server" ContentPlaceHolderID="Body">
+
     <div class="container">
         <div class="row vh-100 d-flex flex-column justify-content-center align-items-center">
             <div class="col-4">
@@ -32,5 +27,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+</asp:Content>

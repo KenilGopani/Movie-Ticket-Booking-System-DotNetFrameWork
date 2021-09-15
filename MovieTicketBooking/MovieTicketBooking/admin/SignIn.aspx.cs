@@ -19,6 +19,22 @@ namespace MovieTicketBooking.admin
             };
             db.Admins.Add(admin);
             db.SaveChanges();
+
+            admin = new Admin()
+            {
+                Email = "kenil@gmail.com",
+                Password = "1234"
+            };
+            db.Admins.Add(admin);
+            db.SaveChanges();
+
+            admin = new Admin()
+            {
+                Email = "gopal@gmail.com",
+                Password = "1234"
+            };
+            db.Admins.Add(admin);
+            db.SaveChanges();
         }
 
         protected void SignIn_Click(object sender, EventArgs e)

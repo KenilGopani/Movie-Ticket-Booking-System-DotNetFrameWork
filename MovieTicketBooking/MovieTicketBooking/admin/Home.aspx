@@ -1,12 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="MovieTicketBooking.admin.Home" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="MovieTicketBooking.admin.Home" %>
 
-<!DOCTYPE html>
+<asp:Content runat="server" ContentPlaceHolderID="Title">
+   Home | Admin
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Home | Admin</title>
-</head>
-<body>
-    <asp:HyperLink runat="server">Add Movie</asp:HyperLink>
-</body>
-</html>
+<asp:Content runat="server" ContentPlaceHolderID="Body">
+    <asp:HyperLink runat="server" NavigateUrl="~/admin/addMovie.aspx">Add Movie</asp:HyperLink>
+
+
+
+
+
+</asp:Content>
