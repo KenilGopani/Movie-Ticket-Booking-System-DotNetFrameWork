@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.admin.SignIn" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.admin.Sign_In" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Title">
    SignIn | Admin
@@ -19,7 +19,7 @@
                     <div class="mb-3">
                         <asp:TextBox ID="Password" runat="server" CssClass="form-control" placeholder="Password" required="" TextMode="Password"></asp:TextBox>
                     </div>
-                    <asp:Button runat="server" ID="Signin" Text="Sign-in" CssClass="btn btn-primary w-100 mb-3" OnClick="SignIn_Click" />
+                    <asp:Button runat="server" ID="SignIn" Text="Sign-in" CssClass="btn btn-primary w-100 mb-3" OnClick="SignIn_Click" />
                 </form>
             </div>
         </div>

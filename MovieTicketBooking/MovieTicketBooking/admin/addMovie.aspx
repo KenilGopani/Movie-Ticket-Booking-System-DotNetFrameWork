@@ -1,43 +1,41 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="addMovie.aspx.cs" Inherits="MovieTicketBooking.admin.addMovie" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Title">
-    AddMovie
+    Add Movie | Admin
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="Style">
-    <style type="text/css">
-    </style>
+    
 </asp:Content>
 
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
-    <h1>Add Movies</h1>
+    <h1 class="my-3">Add Movies</h1>
     <hr/>
     <form id="form1" runat="server">
-
-        <table class="table table-borderless">
+        <table class="table table-borderless my-5">
             <tr>
-                <td >Title</td>
+                <th>Title</th>
                 <td>
-                    <asp:TextBox ID="Title" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Title" runat="server" CssClass="form-control w-50"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>Release Date</td>
+                <th>Release Date</th>
                 <td>
-                    <asp:TextBox ID="ReleaseDate" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="ReleaseDate" runat="server" TextMode="Date" CssClass="form-control w-50"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td >Poster</td>
+                <th>Poster</th>
                 <td>
-                    <asp:FileUpload ID="Poster" runat="server" />
+                    <asp:FileUpload ID="Poster" runat="server" CssClass="form-control w-50"/>
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <th>&nbsp;</th>
                 <td>
-                    <asp:Button ID="Add" runat="server" OnClick="Add_Click" Text="Add" />
+                    <asp:Button ID="Add" runat="server" CssClass="btn btn-primary" OnClick="Add_Click" Text="Add" />
                 </td>
             </tr>
         </table>

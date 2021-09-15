@@ -11,7 +11,7 @@ namespace MovieTicketBooking
 {
 
 
-    public partial class Site
+    public partial class User_Site
     {
 
         /// <summary>
@@ -22,6 +22,15 @@ namespace MovieTicketBooking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Title;
+
+        /// <summary>
+        /// Logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Logout;
 
         /// <summary>
         /// Body control.
