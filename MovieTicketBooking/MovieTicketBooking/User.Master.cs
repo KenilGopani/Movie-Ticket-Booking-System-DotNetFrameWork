@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace MovieTicketBooking
 {
-    public partial class Site : System.Web.UI.MasterPage
+    public partial class User_Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
         }
     }
 }

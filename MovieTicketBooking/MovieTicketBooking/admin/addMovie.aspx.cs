@@ -18,7 +18,7 @@ namespace MovieTicketBooking.admin
         protected void Add_Click(object sender, EventArgs e)
         {
             string path = Path.GetFileName(Poster.PostedFile.FileName);
-            string fullpath = "~/posters/" + path;
+            string fullpath = "/posters/" + path;
             Poster.PostedFile.SaveAs(Server.MapPath(fullpath));
 
             MovieContext db = new MovieContext();

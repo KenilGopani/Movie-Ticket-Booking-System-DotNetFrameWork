@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.SignIn" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.Sign_In" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Title">
     SignIn
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
-
     <div class="container">
         <div class="row vh-100 d-flex flex-column justify-content-center align-items-center">
             <div class="col-4">
@@ -20,7 +19,7 @@
                     <div class="mb-3">
                         <asp:TextBox ID="Password" runat="server" CssClass="form-control" placeholder="Password" required="" TextMode="Password"></asp:TextBox>
                     </div>
-                    <asp:Button runat="server" ID="Signin" Text="Sign-in" CssClass="btn btn-primary w-100 mb-3" OnClick="SignIn_Click" />
+                    <asp:Button runat="server" ID="SignIn" Text="Sign-in" CssClass="btn btn-primary w-100 mb-3" OnClick="SignIn_Click" />
                     <asp:HyperLink runat="server" ID="ForgotPass" CssClass="mb-3 d-block text-center">Forgot Password?</asp:HyperLink>
                     <asp:HyperLink runat="server" CssClass="d-block text-center mb-3" NavigateUrl="~/signUp.aspx">New Here?</asp:HyperLink>
                 </form>
