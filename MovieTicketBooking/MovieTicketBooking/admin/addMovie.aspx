@@ -26,10 +26,52 @@
                     <asp:TextBox ID="ReleaseDate" runat="server" TextMode="Date" CssClass="form-control w-50"></asp:TextBox>
                 </td>
             </tr>
+            
+            <tr>
+                <th>Duration</th>
+                <td>
+                    <asp:Textbox ID="Duration" runat="server" CssClass="form-control w-50"/>
+                </td>
+            </tr>
+             <tr>
+                <th>Description</th>
+                <td>
+                    <asp:Textbox ID="Description" runat="server" CssClass="form-control w-50"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>
+                    <asp:DropDownList ID="Language" runat="server" CssClass="form-select w-50">
+                        <asp:ListItem>English</asp:ListItem>
+                        <asp:ListItem>Hindi</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>
+                    <asp:CheckBoxList ID="Category" runat="server" >
+                        <asp:ListItem>Comedy</asp:ListItem>
+                        <asp:ListItem>Action</asp:ListItem>
+                        <asp:ListItem>Drama</asp:ListItem>
+                        <asp:ListItem>Sci-Fi</asp:ListItem>
+                        <asp:ListItem>Thriller</asp:ListItem>
+                        <asp:ListItem>Crime</asp:ListItem>
+                        <asp:ListItem>Fantasy</asp:ListItem>
+                    </asp:CheckBoxList>
+                </td>
+            </tr>
             <tr>
                 <th>Poster</th>
                 <td>
                     <asp:FileUpload ID="Poster" runat="server" CssClass="form-control w-50"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Poster 2</th>
+                <td>
+                    <asp:FileUpload ID="Poster2" runat="server" CssClass="form-control w-50"/>
                 </td>
             </tr>
             <tr>

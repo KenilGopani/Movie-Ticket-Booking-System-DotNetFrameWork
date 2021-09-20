@@ -18,6 +18,16 @@ namespace MovieTicketBooking
         public DateTime ReleaseDate { get; set; }
         [Required]
         public string Poster { get; set; }
+        [Required]
+        public string Poster2 { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public string Duration { get; set; }
+        [Required]
+        public string Language { get; set; }
+        [Required]
+        public string Category { get; set; }
         
     }
 }
