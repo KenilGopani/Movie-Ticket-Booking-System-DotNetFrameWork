@@ -5,7 +5,6 @@
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="Style">
-    
 </asp:Content>
 
 
@@ -42,10 +41,10 @@
             <tr>
                 <th>Language</th>
                 <td>
-                    <asp:DropDownList ID="Language" runat="server" CssClass="form-select w-50">
-                        <asp:ListItem>English</asp:ListItem>
+                   <asp:CheckBoxList ID="Language" runat="server" CssClass="mycss">
                         <asp:ListItem>Hindi</asp:ListItem>
-                    </asp:DropDownList>
+                        <asp:ListItem>English</asp:ListItem>
+                    </asp:CheckBoxList>
                 </td>
             </tr>
             <tr>
@@ -69,9 +68,9 @@
                 </td>
             </tr>
             <tr>
-                <th>Poster 2</th>
+                <th>Full Poster</th>
                 <td>
-                    <asp:FileUpload ID="Poster2" runat="server" CssClass="form-control w-50"/>
+                    <asp:FileUpload ID="FullPoster" runat="server" CssClass="form-control w-50"/>
                 </td>
             </tr>
             <tr>

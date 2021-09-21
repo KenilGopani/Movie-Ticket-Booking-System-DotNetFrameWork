@@ -11,7 +11,7 @@ namespace MovieTicketBooking
 {
 
 
-    public partial class Home
+    public partial class _default
     {
 
         /// <summary>

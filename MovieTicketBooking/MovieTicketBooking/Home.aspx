@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="MovieTicketBooking.Home" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="MovieTicketBooking._default" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
 

@@ -66,7 +66,7 @@ namespace MovieTicketBooking.admin
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Language;
+        protected global::System.Web.UI.WebControls.CheckBoxList Language;
 
         /// <summary>
         /// Category control.
@@ -87,13 +87,13 @@ namespace MovieTicketBooking.admin
         protected global::System.Web.UI.WebControls.FileUpload Poster;
 
         /// <summary>
-        /// Poster2 control.
+        /// FullPoster control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Poster2;
+        protected global::System.Web.UI.WebControls.FileUpload FullPoster;
 
         /// <summary>
         /// Add control.
