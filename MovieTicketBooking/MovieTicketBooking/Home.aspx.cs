@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MovieTicketBooking
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class _default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,15 +16,15 @@ namespace MovieTicketBooking
             var movies = db.Movies.ToList();
             foreach(var movie in movies)
             {
-                html += $@"<div class=""col my-4"">
-                                <div class=""card text-center h-100"">
+                html += $@"<div class=""col my-4"" >
+                                <a href=""movieDetails.aspx?id={movie.Id}"" class=""card text-center h-100 text-dark"" style=""text-decoration:none;"" >
                                     <div class=""card-body d-flex justify-content-center"">
                                         <img src=""{movie.Poster}"" class=""img-top"" alt=""Poster yet not available"" width=""260"" height=""375""/>
                                     </div>
                                     <div class=""card-footer"">
                                         {movie.Title}
                                     </div>
-                                </div>
+                                </a>
                             </div>";
             }
             Movies.Controls.Add(new Literal() { Text = html });
