@@ -18,5 +18,10 @@ namespace MovieTicketBooking
         {
             Session["user"] = null;
         }
+
+        protected void Search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

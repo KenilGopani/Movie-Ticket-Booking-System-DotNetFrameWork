@@ -1,10 +1,19 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.admin.Sign_In" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signIn.aspx.cs" Inherits="MovieTicketBooking.admin.Sign_In" %>
 
-<asp:Content runat="server" ContentPlaceHolderID="Title">
-   SignIn | Admin
-</asp:Content>
-<asp:Content runat="server" ContentPlaceHolderID="Body">
+<!DOCTYPE html>
 
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="Title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="Style" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+</head>
+<body>
     <div class="container">
         <div class="row vh-100 d-flex flex-column justify-content-center align-items-center">
             <div class="col-4">
@@ -24,4 +33,6 @@
             </div>
         </div>
     </div>
-</asp:Content>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -5,10 +5,10 @@
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
+    
     <asp:HyperLink runat="server" NavigateUrl="~/admin/addMovie.aspx">Add Movie</asp:HyperLink>
 
-
-
+    <asp:HyperLink runat="server" NavigateUrl="~/admin/addShow.aspx">Add Show</asp:HyperLink>
 
 
 </asp:Content>

@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\addMovie.aspx" />
+    <Content Include="admin\addShow.aspx" />
     <Content Include="admin\home.aspx" />
     <Content Include="admin\signIn.aspx" />
     <Content Include="App_Data\MovieDB.mdf" />
@@ -95,7 +96,14 @@
     <Compile Include="admin\addMovie.aspx.designer.cs">
       <DependentUpon>addMovie.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\Admin.cs" />
+    <Compile Include="admin\addShow.aspx.cs">
+      <DependentUpon>addShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addShow.aspx.designer.cs">
+      <DependentUpon>addShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="admin\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,8 +125,9 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Movie.cs" />
-    <Compile Include="MovieContext.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieContext.cs" />
+    <Compile Include="Models\Show.cs" />
     <Compile Include="movieDetails.aspx.cs">
       <DependentUpon>movieDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,7 +164,7 @@
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

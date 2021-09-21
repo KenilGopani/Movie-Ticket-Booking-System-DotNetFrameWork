@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieTicketBooking.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace MovieTicketBooking.admin
 
         }
 
-        protected void Add_Click(object sender, EventArgs e)
+        protected void AddMovie_Click(object sender, EventArgs e)
         {
             string path = Path.GetFileName(Poster.PostedFile.FileName);
             string fullpath = "/posters/" + path;
@@ -42,7 +43,7 @@ namespace MovieTicketBooking.admin
                 Title = Title.Text,
                 ReleaseDate = DateTime.Parse(ReleaseDate.Text),
                 Poster = fullpath,
-                Poster2 = fullpath2,
+                FullPoster = fullpath2,
                 Description = Description.Text,
                 Duration = Duration.Text,
                 Language = str_lang.Substring(0, str_lang.Length - 1),

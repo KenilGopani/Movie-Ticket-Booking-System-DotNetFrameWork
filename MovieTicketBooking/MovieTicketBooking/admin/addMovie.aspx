@@ -9,10 +9,10 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
-    <h1 class="my-3">Add Movies</h1>
-    <hr/>
+    <h1 class="my-3">Add Movie</h1>
+    <hr class="text-primary"/>
     <form id="form1" runat="server">
-        <table class="table table-borderless my-5">
+        <table class="table table-borderless my-3">
             <tr>
                 <th>Title</th>
                 <td>
@@ -41,23 +41,23 @@
             <tr>
                 <th>Language</th>
                 <td>
-                   <asp:CheckBoxList ID="Language" runat="server" CssClass="mycss">
-                        <asp:ListItem>Hindi</asp:ListItem>
-                        <asp:ListItem>English</asp:ListItem>
+                   <asp:CheckBoxList ID="Language" runat="server" CellPadding="3">
+                        <asp:ListItem>&nbsp;Hindi</asp:ListItem>
+                        <asp:ListItem>&nbsp;English</asp:ListItem>
                     </asp:CheckBoxList>
                 </td>
             </tr>
             <tr>
                 <th>Category</th>
                 <td>
-                    <asp:CheckBoxList ID="Category" runat="server" >
-                        <asp:ListItem>Comedy</asp:ListItem>
-                        <asp:ListItem>Action</asp:ListItem>
-                        <asp:ListItem>Drama</asp:ListItem>
-                        <asp:ListItem>Sci-Fi</asp:ListItem>
-                        <asp:ListItem>Thriller</asp:ListItem>
-                        <asp:ListItem>Crime</asp:ListItem>
-                        <asp:ListItem>Fantasy</asp:ListItem>
+                    <asp:CheckBoxList ID="Category" runat="server" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="4" CellPadding="3">
+                        <asp:ListItem>&nbsp;Comedy</asp:ListItem>
+                        <asp:ListItem>&nbsp;Action</asp:ListItem>
+                        <asp:ListItem>&nbsp;Drama</asp:ListItem>
+                        <asp:ListItem>&nbsp;Sci-Fi</asp:ListItem>
+                        <asp:ListItem>&nbsp;Thriller</asp:ListItem>
+                        <asp:ListItem>&nbsp;Crime</asp:ListItem>
+                        <asp:ListItem>&nbsp;Fantasy</asp:ListItem>
                     </asp:CheckBoxList>
                 </td>
             </tr>
@@ -76,7 +76,7 @@
             <tr>
                 <th>&nbsp;</th>
                 <td>
-                    <asp:Button ID="Add" runat="server" CssClass="btn btn-primary" OnClick="Add_Click" Text="Add" />
+                    <asp:Button ID="AddMovie" runat="server" CssClass="btn btn-primary" OnClick="AddMovie_Click" Text="Add Movie" />
                 </td>
             </tr>
         </table>

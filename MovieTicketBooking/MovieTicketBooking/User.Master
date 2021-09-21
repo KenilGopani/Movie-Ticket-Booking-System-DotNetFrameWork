@@ -8,9 +8,7 @@
         <asp:ContentPlaceHolder ID="Title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-
-     <asp:ContentPlaceHolder ID="Style" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="Style" runat="server"></asp:ContentPlaceHolder>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 </head>
@@ -23,35 +21,39 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/home.aspx">Home</a>
                     </li>
-                    <li class="d-flex mx-3">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin/home.aspx">Admin</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
                     <%if (Session["user"] == null)
                         { %>
-                        <li class="nav-item">
-                            <a class="btn btn-primary shadow-none" href="/signIn.aspx">Sign-in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/signUp.aspx">Sign-up</a>
-                        </li>
-                    <% }else{ %>
-                        <li class="nav-item">
-                            <form runat="server">
-                                <asp:Button runat="server" ID="Logout" Text="Logout" CssClass="btn btn-primary" OnClick="Logout_Click"></asp:Button>
-                            </form>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signIn.aspx">Sign-in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signUp.aspx">Sign-up</a>
+                    </li>
+                    <% }
+                    else
+                    { %>
+                    <li class="nav-item">
+                        <form runat="server">
+                            <asp:Button runat="server" ID="Logout" Text="Logout" CssClass="btn btn-primary" OnClick="Logout_Click"></asp:Button>
+                        </form>
+                    </li>
                     <%} %>
+                    <li class="d-flex mx-3">
+                        <form runat="server">
+                            <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control me-2" type="text" placeholder="Search" AutoPostBack="True" OnTextChanged="Search_TextChanged"></asp:TextBox>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container">
-        <asp:ContentPlaceHolder ID="Body" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+
+    <asp:ContentPlaceHolder ID="Body" runat="server"></asp:ContentPlaceHolder>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
