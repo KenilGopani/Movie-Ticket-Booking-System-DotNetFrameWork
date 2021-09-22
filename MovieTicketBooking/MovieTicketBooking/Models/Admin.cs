@@ -18,5 +18,6 @@ namespace MovieTicketBooking.Models
 
         [Required]
         public string Password { get; set; }
+        public string cpassword { get; set; }
     }
 }

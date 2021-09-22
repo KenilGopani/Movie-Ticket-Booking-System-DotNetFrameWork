@@ -82,6 +82,7 @@
     <Content Include="App_Data\MovieDB_log.ldf">
       <DependentUpon>MovieDB.mdf</DependentUpon>
     </Content>
+    <Content Include="bookShow.aspx" />
     <Content Include="home.aspx" />
     <Content Include="movieDetails.aspx" />
     <Content Include="signIn.aspx" />
@@ -103,6 +104,30 @@
     <Compile Include="admin\addShow.aspx.designer.cs">
       <DependentUpon>addShow.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bookShow.aspx.cs">
+      <DependentUpon>bookShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookShow.aspx.designer.cs">
+      <DependentUpon>bookShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109211609380_InitialCreate.cs" />
+    <Compile Include="Migrations\202109211609380_InitialCreate.designer.cs">
+      <DependentUpon>202109211609380_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109221004194_Initial.cs" />
+    <Compile Include="Migrations\202109221004194_Initial.designer.cs">
+      <DependentUpon>202109221004194_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109221046189_BookingModel.cs" />
+    <Compile Include="Migrations\202109221046189_BookingModel.designer.cs">
+      <DependentUpon>202109221046189_BookingModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109221209146_Languages.cs" />
+    <Compile Include="Migrations\202109221209146_Languages.designer.cs">
+      <DependentUpon>202109221209146_Languages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="admin\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
@@ -125,6 +150,7 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieContext.cs" />
     <Compile Include="Models\Show.cs" />
@@ -179,6 +205,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="posters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109211609380_InitialCreate.resx">
+      <DependentUpon>202109211609380_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109221004194_Initial.resx">
+      <DependentUpon>202109221004194_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109221046189_BookingModel.resx">
+      <DependentUpon>202109221046189_BookingModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109221209146_Languages.resx">
+      <DependentUpon>202109221209146_Languages.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
