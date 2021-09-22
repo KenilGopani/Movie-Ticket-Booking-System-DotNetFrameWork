@@ -16,7 +16,9 @@
             <tr>
                 <th>Movie</th>
                 <td>
-                    <asp:DropDownList Id="aMovie" runat="server" CssClass="form-select w-50"></asp:DropDownList>
+                    <asp:DropDownList Id="aMovie" runat="server" CssClass="form-select w-50" AutoPostBack="True" OnSelectedIndexChanged="aMovie_SelectedIndexChanged">
+                        <asp:ListItem>Select Movie</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>
@@ -47,6 +49,15 @@
                         <asp:ListItem>&nbsp;3:00 PM&nbsp;&nbsp;</asp:ListItem>
                         <asp:ListItem>&nbsp;6:00 PM&nbsp;&nbsp;</asp:ListItem>
                     </asp:CheckBoxList>
+                </td>
+            </tr>
+            <tr>
+                <th> Language</th>
+                <td>
+                    <asp:DropDownList ID="Language" runat="server" CssClass="form-select w-50">
+                        <asp:ListItem>Select Language</asp:ListItem>
+
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>

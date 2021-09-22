@@ -21,7 +21,10 @@ namespace MovieTicketBooking.Models
         public DateTime EndDate { get; set; }
 
         public string Time { get; set; }
+        public string Language { get; set; }
 
         public decimal Price { get; set; }
+        public ICollection<Booking> Booking { get; set; }
+
     }
 }
