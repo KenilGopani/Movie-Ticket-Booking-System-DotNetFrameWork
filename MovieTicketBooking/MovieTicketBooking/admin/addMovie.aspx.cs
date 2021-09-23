@@ -13,7 +13,15 @@ namespace MovieTicketBooking.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<string> Languages = (List<string>)Application["Languages"];
+            Language.Items.Clear();
+            foreach (var lang in Languages)
+                Language.Items.Add(lang);
 
+            List<string> Categories = (List<string>)Application["Categories"];
+            Category.Items.Clear();
+            foreach (var show in Categories)
+                Category.Items.Add(show);
         }
 
         protected void AddMovie_Click(object sender, EventArgs e)

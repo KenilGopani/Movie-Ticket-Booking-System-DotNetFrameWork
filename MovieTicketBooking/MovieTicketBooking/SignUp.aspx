@@ -35,8 +35,7 @@
                     <div class="mb-3">
                         <asp:TextBox runat="server" CssClass="form-control" ID="CPassword" placeholder="Confirm Password" TextMode="Password" required=""></asp:TextBox>
                     </div>
-                    <button type="reset" class="btn btn-primary w-100 mb-3" id="Reset">Reset</button>
-                    <asp:Button runat="server" CssClass="btn btn-primary w-100 mb-3" ID="SignUp" Text="Sign-up" OnClick="SignUp_Click" />
+                    <asp:Button runat="server" CssClass="btn btn-primary w-100 mt-3 " ID="SignUp" Text="Sign-up" OnClick="SignUp_Click" />
                 </form>
             </div>
         </div>

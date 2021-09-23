@@ -22,9 +22,20 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/home.aspx">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/admin/home.aspx">Admin</a>
+
+                        <%if (Session["IsAdmin"] != null)
+                            { %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="Admin" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage 
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="Admin">
+                                <li><a class="dropdown-item" href="/admin/addMovie.aspx">Movies </a></li>
+                                <li><a class="dropdown-item" href="/admin/addShow.aspx">Shows</a></li>
+                                <li><a class="dropdown-item" href="#">Booking</a></li>
+                            </ul>
                         </li>
+                        <%} %>
+
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
                         <%if (Session["user"] == null)
@@ -35,17 +46,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/signUp.aspx">Sign-up</a>
                         </li>
-                        <% }
+                        <%}
                             else
                             { %>
                         <li class="nav-item">
-                            <asp:Button runat="server" ID="Logout" Text="Logout" CssClass="btn btn-primary" OnClick="Logout_Click"></asp:Button>
+                            <asp:Button runat="server" ID="Logout" Text="Logout" CssClass="btn btn-dark" OnClick="Logout_Click"></asp:Button>
                         </li>
-                        <%} %>
-                        <li class="nav-item">
-
-                            <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control me-2" type="text" placeholder="Search" AutoPostBack="True" OnTextChanged="Search_TextChanged"></asp:TextBox>
-                        </li>
+                        <%}%>
                     </ul>
                 </div>
             </div>

@@ -21,6 +21,10 @@ namespace MovieTicketBooking
             var user = db.Users.Where(u => u.Email.Equals(Email.Text) && u.Password.Equals(Password.Text)).FirstOrDefault();
             if (user != null)
             {
+                if(user.IsAdmin)
+                {
+                    Session["IsAdmin"] = user.IsAdmin;
+                }
                 Session["user"] = user.Email;
                 Response.Redirect("~/home.aspx");
             }

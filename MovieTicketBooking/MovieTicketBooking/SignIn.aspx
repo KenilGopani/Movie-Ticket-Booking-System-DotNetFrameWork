@@ -21,9 +21,9 @@
                     <div class="mb-3">
                         <asp:TextBox ID="Password" runat="server" CssClass="form-control" placeholder="Password" required="" TextMode="Password"></asp:TextBox>
                     </div>
-                    <asp:Button runat="server" ID="SignIn" Text="Sign-in" CssClass="btn btn-primary w-100 mb-3" OnClick="SignIn_Click" />
+                    <asp:Button runat="server" ID="SignIn" Text="Sign-in" CssClass="btn btn-primary w-100 my-3" OnClick="SignIn_Click" />
                     <asp:HyperLink runat="server" ID="ForgotPass" CssClass="mb-3 d-block text-center">Forgot Password?</asp:HyperLink>
-                    <asp:HyperLink runat="server" CssClass="d-block text-center mb-3" NavigateUrl="~/signUp.aspx">New Here?</asp:HyperLink>
+                    <asp:HyperLink runat="server" CssClass="d-block text-center" NavigateUrl="~/signUp.aspx">New Here?</asp:HyperLink>
                 </form>
             </div>
         </div>
