@@ -16,11 +16,21 @@ namespace MovieTicketBooking
             MovieContext db = new MovieContext();
             Movie movie = db.Movies.FirstOrDefault(m => m.Id ==id);
             title.Controls.Add(new Literal() { Text=movie.Title});
+            string adminSpecial = string.Empty;
+            if (Session["IsAdmin"] != null)
+            {
+                adminSpecial = @"<a runat=""server"" href=""#"" class=""btn btn-primary btn-sm ms-4"">Edit</a>
+                              <a runat=""server"" href=""#"" class=""btn btn-danger btn-sm ms-2"" data-bs-toggle=""modal"" data-bs-target=""#DeleteMovie"">Delete</a>";
+            }
+          
             string html = $@"
             <div class=""container"">
                 <div class=""d-flex justify-content-between align-items-center my-3"">
-                    <h1>{movie.Title}</h1> 
-                    <div><a runat = ""server"" href=""/bookShow.aspx?id={movie.Id}"" class=""btn btn-primary"">Book Show</a></div>
+                    <div class=""d-flex justify-content-between align-items-center"">
+                        <h1>{movie.Title}</h1> 
+                        {adminSpecial}
+                    </div>
+                    <div><a runat=""server"" href=""/bookShow.aspx?id={movie.Id}"" class=""btn btn-primary"">Book Show</a></div>
                 </div>
             </div>
             <div class=""d-flex justify-content-center bg-dark container-fluid"">

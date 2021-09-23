@@ -76,13 +76,13 @@
   <ItemGroup>
     <Content Include="admin\addMovie.aspx" />
     <Content Include="admin\addShow.aspx" />
-    <Content Include="admin\home.aspx" />
-    <Content Include="admin\signIn.aspx" />
+    <Content Include="admin\editMovie.aspx" />
     <Content Include="App_Data\MovieDB.mdf" />
     <Content Include="App_Data\MovieDB_log.ldf">
       <DependentUpon>MovieDB.mdf</DependentUpon>
     </Content>
     <Content Include="bookShow.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="movieDetails.aspx" />
     <Content Include="signIn.aspx" />
@@ -104,12 +104,22 @@
     <Compile Include="admin\addShow.aspx.designer.cs">
       <DependentUpon>addShow.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\editMovie.aspx.cs">
+      <DependentUpon>editMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editMovie.aspx.designer.cs">
+      <DependentUpon>editMovie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="bookShow.aspx.cs">
       <DependentUpon>bookShow.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="bookShow.aspx.designer.cs">
       <DependentUpon>bookShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202109211609380_InitialCreate.cs" />
     <Compile Include="Migrations\202109211609380_InitialCreate.designer.cs">
@@ -127,22 +137,19 @@
     <Compile Include="Migrations\202109221209146_Languages.designer.cs">
       <DependentUpon>202109221209146_Languages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109231522596_admin-table.cs" />
+    <Compile Include="Migrations\202109231522596_admin-table.designer.cs">
+      <DependentUpon>202109231522596_admin-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231524265_admin-table2.0.cs" />
+    <Compile Include="Migrations\202109231524265_admin-table2.0.designer.cs">
+      <DependentUpon>202109231524265_admin-table2.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231631250_admin-table3.0.cs" />
+    <Compile Include="Migrations\202109231631250_admin-table3.0.designer.cs">
+      <DependentUpon>202109231631250_admin-table3.0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Admin.cs" />
-    <Compile Include="admin\home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\signIn.aspx.cs">
-      <DependentUpon>signIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\signIn.aspx.designer.cs">
-      <DependentUpon>signIn.aspx</DependentUpon>
-    </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,13 +183,6 @@
     <Compile Include="signUp.aspx.designer.cs">
       <DependentUpon>signUp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -195,7 +195,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="User.Master" />
-    <Content Include="admin\Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,6 +217,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109221209146_Languages.resx">
       <DependentUpon>202109221209146_Languages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231522596_admin-table.resx">
+      <DependentUpon>202109231522596_admin-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231524265_admin-table2.0.resx">
+      <DependentUpon>202109231524265_admin-table2.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231631250_admin-table3.0.resx">
+      <DependentUpon>202109231631250_admin-table3.0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

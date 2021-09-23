@@ -27,6 +27,10 @@ namespace MovieTicketBooking.Models
         
         [Required]
         public long MobileNum { get; set; }
+
+        [Required]
+        public bool IsAdmin { get; set; } = false;
+
         public ICollection<Booking> Booking { get; set; }
 
     }

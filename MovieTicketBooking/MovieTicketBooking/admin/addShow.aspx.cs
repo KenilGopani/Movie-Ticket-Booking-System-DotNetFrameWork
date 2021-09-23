@@ -20,6 +20,11 @@ namespace MovieTicketBooking.admin
             {
                 aMovie.Items.Add(movie.Title);
             }
+
+            List<string> ShowTimes = (List<string>)Application["ShowTimes"];
+            Time.Items.Clear();
+            foreach(var show in ShowTimes)
+                Time.Items.Add(show);
         }
 
         protected void AddShow_Click(object sender, EventArgs e)

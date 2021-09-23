@@ -12,6 +12,7 @@ namespace MovieTicketBooking.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         public User User { get; set; }
         public Show Show { get; set; }
         public DateTime BDate { get; set; }
