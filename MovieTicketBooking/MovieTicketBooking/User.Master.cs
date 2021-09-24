@@ -16,7 +16,7 @@ namespace MovieTicketBooking
 
         protected void Logout_Click(object sender, EventArgs e)
         {
-            Session["user"] = null;
+            Session["User"] = null;
             if(Session["IsAdmin"] != null)
                 Session["IsAdmin"] = null;
         }

@@ -389,3 +389,11 @@ E:\All Program\SEM 5 PROJECTS\.NET Framwork\MovieTicketBooking\MovieTicketBookin
 E:\All Program\SEM 5 PROJECTS\.NET Framwork\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable.resources
 E:\All Program\SEM 5 PROJECTS\.NET Framwork\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable20.resources
 E:\All Program\SEM 5 PROJECTS\.NET Framwork\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable30.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.InitialCreate.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.Initial.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.BookingModel.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.Languages.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable20.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable30.resources
+D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.csproj.GenerateResource.cache

@@ -12,27 +12,17 @@ namespace MovieTicketBooking.admin
     public partial class addMovie : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            List<string> Languages = (List<string>)Application["Languages"];
-            Language.Items.Clear();
-            foreach (var lang in Languages)
-                Language.Items.Add(lang);
-
-            List<string> Categories = (List<string>)Application["Categories"];
-            Category.Items.Clear();
-            foreach (var show in Categories)
-                Category.Items.Add(show);
-        }
+        { }
 
         protected void AddMovie_Click(object sender, EventArgs e)
         {
-            string path = Path.GetFileName(Poster.PostedFile.FileName);
+            string path = Path.GetFileName(Poster.FileName);
             string fullpath = "/posters/" + path;
-            Poster.PostedFile.SaveAs(Server.MapPath(fullpath));
+            Poster.SaveAs(Server.MapPath(fullpath));
 
-            string path2 = Path.GetFileName(FullPoster.PostedFile.FileName);
+            string path2 = Path.GetFileName(FullPoster.FileName);
             string fullpath2 = "/posters/" + path2;
-            FullPoster.PostedFile.SaveAs(Server.MapPath(fullpath2));
+            FullPoster.SaveAs(Server.MapPath(fullpath2));
 
             string str_cat = string.Empty;
             for (int i = 0; i < Category.Items.Count; i++)

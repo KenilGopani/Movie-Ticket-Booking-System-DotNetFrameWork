@@ -25,7 +25,7 @@ namespace MovieTicketBooking
                 {
                     Session["IsAdmin"] = user.IsAdmin;
                 }
-                Session["user"] = user.Email;
+                Session["User"] = user.Email;
                 Response.Redirect("~/home.aspx");
             }
             else
