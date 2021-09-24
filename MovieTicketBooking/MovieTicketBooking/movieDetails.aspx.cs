@@ -10,16 +10,17 @@ namespace MovieTicketBooking
 {
     public partial class movieDetails : System.Web.UI.Page
     {
+        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(Request.QueryString["id"]);
+            id = int.Parse(Request.QueryString["id"]);
             MovieContext db = new MovieContext();
-            Movie movie = db.Movies.FirstOrDefault(m => m.Id ==id);
+            Movie movie = db.Movies.FirstOrDefault(m => m.Id == id);
             title.Controls.Add(new Literal() { Text=movie.Title});
             string adminSpecial = string.Empty;
             if (Session["IsAdmin"] != null)
             {
-                adminSpecial = @"<a runat=""server"" href=""#"" class=""btn btn-primary btn-sm ms-4"">Edit</a>
+                adminSpecial = $@"<a runat=""server"" href=""/admin/editMovie.aspx?id={Server.UrlEncode(id.ToString())}"" class=""btn btn-primary btn-sm ms-4"">Edit</a>
                               <a runat=""server"" href=""#"" class=""btn btn-danger btn-sm ms-2"" data-bs-toggle=""modal"" data-bs-target=""#DeleteMovie"">Delete</a>";
             }
           
@@ -47,6 +48,17 @@ namespace MovieTicketBooking
             
             Details.Controls.Add(new Literal() {Text=html});
         }
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            MovieContext db = new MovieContext();
+            var movie = db.Movies.FirstOrDefault(m => m.Id == id);
+            db.Movies.Remove(movie);
+            db.SaveChanges();
+            Response.Redirect("~/home.aspx");
+        }
     }
+
+   
 
 }

@@ -82,7 +82,6 @@
       <DependentUpon>MovieDB.mdf</DependentUpon>
     </Content>
     <Content Include="bookShow.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="movieDetails.aspx" />
     <Content Include="signIn.aspx" />
@@ -117,9 +116,6 @@
     </Compile>
     <Compile Include="bookShow.aspx.designer.cs">
       <DependentUpon>bookShow.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202109211609380_InitialCreate.cs" />
     <Compile Include="Migrations\202109211609380_InitialCreate.designer.cs">

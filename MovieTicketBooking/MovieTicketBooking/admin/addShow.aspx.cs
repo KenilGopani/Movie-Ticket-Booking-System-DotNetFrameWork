@@ -15,27 +15,24 @@ namespace MovieTicketBooking.admin
         {
             MovieContext db = new MovieContext();
             var movies = db.Movies.ToList();
-            aMovie.Items.Clear();
-            foreach(var movie in movies)
+            if (Session["Added"] == null)
             {
-                aMovie.Items.Add(movie.Title);
+                foreach (var movie in movies)
+                {
+                    aMovie.Items.Add(movie.Title);
+                }
+                Session["Added"] = true;
             }
-
-            List<string> ShowTimes = (List<string>)Application["ShowTimes"];
-            Time.Items.Clear();
-            foreach(var show in ShowTimes)
-                Time.Items.Add(show);
         }
 
         protected void AddShow_Click(object sender, EventArgs e)
         {
             MovieContext db = new MovieContext();
-                    movie = db.Movies.FirstOrDefault(m => m.Title == aMovie.SelectedItem.Text);
+            movie = db.Movies.FirstOrDefault(m => m.Title == aMovie.SelectedItem.Text);
             for(int i = 0; i < Time.Items.Count; i++)
             {
                 if(Time.Items[i].Selected)
                 {
-
                     Show show = new Show()
                     {
                         Movie = movie,
@@ -57,6 +54,7 @@ namespace MovieTicketBooking.admin
             MovieContext db = new MovieContext();
             movie = db.Movies.FirstOrDefault(m => m.Title == aMovie.SelectedItem.Text);
             List<string> languages = movie.Language.Split(',').ToList();
+            Language.Items.Clear();
             foreach(var lan in languages)
             {
                 Language.Items.Add(lan);

@@ -35,10 +35,9 @@
                             </ul>
                         </li>
                         <%} %>
-
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
-                        <%if (Session["user"] == null)
+                        <%if (Session["User"] == null)
                             { %>
                         <li class="nav-item">
                             <a class="nav-link" href="/signIn.aspx">Sign-in</a>
