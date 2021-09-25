@@ -10,7 +10,7 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="Body">
     <div class="container">
-
+        <asp:Label ID="Label1" runat="server"></asp:Label>
         <h1 class="my-3">Edit Movie</h1>
         <hr class="text-primary" />
         <table class="table table-borderless my-3">

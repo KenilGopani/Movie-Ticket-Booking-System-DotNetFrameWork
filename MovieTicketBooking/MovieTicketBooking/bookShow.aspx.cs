@@ -27,36 +27,45 @@ namespace MovieTicketBooking
                 Languages.Items.Add(lang);
 
             SelectSeat.Visible = false;
+
+            Session["Title"] = movie.Title;
         }
 
         protected void Next_Click(object sender, EventArgs e)
         {
-            MovieContext db = new MovieContext();
             DateTime selectedDate = DateTime.Parse(Dates.SelectedValue);
+            Session["SelectedDate"] = Dates.SelectedValue;
+            
+            MovieContext db = new MovieContext();
+
             var shows = db.Shows.Where(
                 s => s.Movie.Id == id 
                 && s.Language == Languages.SelectedValue
-               && DateTime.Compare(s.StartDate,selectedDate) <= 0
+                && DateTime.Compare(s.StartDate,selectedDate) <= 0
                 && DateTime.Compare(s.EndDate, selectedDate) >= 0).ToList();
+            
             Shows.Items.Clear();
             foreach (var show in shows)
             {
                 Shows.Items.Add(new ListItem() { Value = show.Id.ToString(), Text = show.Time });
             }
+            
             SelectLanguage.Visible = false;
             SelectDate.Visible = false;
             SelectShow.Visible = true;
 
-            Session["SelectedDate"] = Dates.SelectedValue; 
         }
 
         protected void Shows_SelectedIndexChanged(object sender, EventArgs e)
         {
             MovieContext db = new MovieContext();
+            
             int selectedShow = Int32.Parse(Shows.SelectedValue);
             Show show = db.Shows.Where(s => s.Id == selectedShow).FirstOrDefault();
+            Session["ShowId"] = show.Id.ToString();
+
             DateTime selectedDate = DateTime.Parse(Session["selectedDate"].ToString());
-            var bookings = db.Bookings.Where(b => b.Show.Id == show.Id && DateTime.Compare(b.BDate,selectedDate) ==0).ToList();
+            var bookings = db.Bookings.Where(b => b.Show.Id == show.Id && DateTime.Compare(b.BDate,selectedDate) == 0).ToList();
             List<int> bookedSeats = new List<int>();
 
             foreach(var book in bookings)
@@ -79,9 +88,36 @@ namespace MovieTicketBooking
 
         protected void BookTickets_Click(object sender, EventArgs e)
         {
-            MovieContext db = new MovieContext();
-            Booking booking = new Booking();
+            int showId = int.Parse(Session["ShowId"].ToString());
+            string email = Session["User"].ToString();
+            DateTime selectedDate = DateTime.Parse(Session["selectedDate"].ToString());
 
+            MovieContext db = new MovieContext();
+            Show show = db.Shows.Where(s => s.Id == showId).FirstOrDefault();
+
+            User user = db.Users.FirstOrDefault(u => u.Email == email);
+
+            for (int i = 0; i < Seats.Items.Count; i++)
+            {
+                if (Seats.Items[i].Selected)
+                {
+                    Booking booking = new Booking()
+                    {
+                        BDate = selectedDate,
+                        Show = show,
+                        SeatNo = i + 1,
+                        User = user
+
+                    };
+                    db.Bookings.Add(booking);
+                }
+            }
+            db.SaveChanges();
+
+            Session["ShowId"] = null;
+            Session["selectedDate"] = null;
+
+            Response.Redirect("~/home.aspx");
 
         }
     }
