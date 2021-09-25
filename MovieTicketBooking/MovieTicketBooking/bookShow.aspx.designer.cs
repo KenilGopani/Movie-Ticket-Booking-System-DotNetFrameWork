@@ -51,13 +51,22 @@ namespace MovieTicketBooking
         protected global::System.Web.UI.WebControls.RadioButtonList Languages;
 
         /// <summary>
-        /// SelectSeat control.
+        /// Next control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel SelectSeat;
+        protected global::System.Web.UI.WebControls.Button Next;
+
+        /// <summary>
+        /// SelectShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SelectShow;
 
         /// <summary>
         /// Shows control.
@@ -69,6 +78,15 @@ namespace MovieTicketBooking
         protected global::System.Web.UI.WebControls.RadioButtonList Shows;
 
         /// <summary>
+        /// SelectSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SelectSeat;
+
+        /// <summary>
         /// Seats control.
         /// </summary>
         /// <remarks>
@@ -78,12 +96,12 @@ namespace MovieTicketBooking
         protected global::System.Web.UI.WebControls.CheckBoxList Seats;
 
         /// <summary>
-        /// Next control.
+        /// BookTickets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Next;
+        protected global::System.Web.UI.WebControls.Button BookTickets;
     }
 }
