@@ -397,3 +397,6 @@ D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieT
 D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable20.resources
 D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable30.resources
 D:\Projects\.NETFramework\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.csproj.GenerateResource.cache
+E:\DDU\.NET Framwork Project\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable.resources
+E:\DDU\.NET Framwork Project\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable20.resources
+E:\DDU\.NET Framwork Project\MovieTicketBooking\MovieTicketBooking\obj\Debug\MovieTicketBooking.Migrations.admintable30.resources
