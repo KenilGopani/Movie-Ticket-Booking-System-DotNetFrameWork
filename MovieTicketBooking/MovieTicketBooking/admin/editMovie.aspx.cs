@@ -54,6 +54,7 @@ namespace MovieTicketBooking.admin
 
             MovieContext db = new MovieContext();
 
+
             Movie movie = db.Movies.FirstOrDefault(m => m.Id == id);
             movie.Title = Title.Text;
             movie.ReleaseDate = DateTime.Parse(ReleaseDate.Text);
@@ -62,11 +63,13 @@ namespace MovieTicketBooking.admin
             movie.Language = str_lang.Substring(0, str_lang.Length - 1);
             movie.Category = str_cat.Substring(0, str_cat.Length - 2);
 
-            db.Movies.AddOrUpdate(movie);
+            Label1.Text = movie.Title + movie.ReleaseDate.ToString() + movie.Language + movie.Category + movie.Duration;
 
-            db.SaveChanges();
+            /*db.Movies.Add(movie);
 
-            Response.Redirect("~/movieDetails.aspx?id=" + id);
+            db.SaveChanges();*/
+            //Response.Redirect("~/movieDetails.aspx?id=" + id);
+
         }
     }
 }

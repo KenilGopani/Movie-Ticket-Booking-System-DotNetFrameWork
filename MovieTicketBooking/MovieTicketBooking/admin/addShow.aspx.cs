@@ -47,6 +47,8 @@ namespace MovieTicketBooking.admin
                 }
             }
             db.SaveChanges();
+            Session["Added"] = null;
+            Response.Redirect("~/home.aspx");
         }
 
         protected void aMovie_SelectedIndexChanged(object sender, EventArgs e)
