@@ -15,6 +15,24 @@ namespace MovieTicketBooking
     {
 
         /// <summary>
+        /// SelectDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SelectDate;
+
+        /// <summary>
+        /// Dates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList Dates;
+
+        /// <summary>
         /// SelectLanguage control.
         /// </summary>
         /// <remarks>
@@ -24,30 +42,48 @@ namespace MovieTicketBooking
         protected global::System.Web.UI.WebControls.Panel SelectLanguage;
 
         /// <summary>
-        /// RadioButton1 control.
+        /// Languages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
+        protected global::System.Web.UI.WebControls.RadioButtonList Languages;
 
         /// <summary>
-        /// RadioButton2 control.
+        /// SelectSeat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
+        protected global::System.Web.UI.WebControls.Panel SelectSeat;
 
         /// <summary>
-        /// Panel2 control.
+        /// Shows control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.RadioButtonList Shows;
+
+        /// <summary>
+        /// Seats control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList Seats;
+
+        /// <summary>
+        /// Next control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Next;
     }
 }
