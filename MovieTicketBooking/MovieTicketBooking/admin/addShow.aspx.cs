@@ -13,6 +13,9 @@ namespace MovieTicketBooking.admin
         Movie movie;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["IsAdmin"] == null)
+                Response.Redirect("~/home.aspx");
+
             MovieContext db = new MovieContext();
             var movies = db.Movies.ToList();
             if (Session["Added"] == null)

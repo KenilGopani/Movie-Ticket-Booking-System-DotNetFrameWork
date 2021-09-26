@@ -29,9 +29,10 @@
                             <a class="nav-link dropdown-toggle" href="#" id="Admin" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage 
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="Admin">
-                                <li><a class="dropdown-item" href="/admin/addMovie.aspx">Movies </a></li>
-                                <li><a class="dropdown-item" href="/admin/addShow.aspx">Shows</a></li>
-                                <li><a class="dropdown-item" href="#">Booking</a></li>
+                                <li><a class="dropdown-item" href="/admin/addMovie.aspx">Add Movie </a></li>
+                                <li><a class="dropdown-item" href="/admin/addShow.aspx">Add Show</a></li>
+                                <li><a class="dropdown-item" href="/admin/allShows.aspx">All Shows</a></li>
+                                <li><a class="dropdown-item" href="/admin/allBookings">All Booking</a></li>
                             </ul>
                         </li>
                         <%} %>

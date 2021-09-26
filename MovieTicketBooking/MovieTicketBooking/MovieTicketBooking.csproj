@@ -76,6 +76,8 @@
   <ItemGroup>
     <Content Include="admin\addMovie.aspx" />
     <Content Include="admin\addShow.aspx" />
+    <Content Include="admin\allBookings.aspx" />
+    <Content Include="admin\allShows.aspx" />
     <Content Include="admin\editMovie.aspx" />
     <Content Include="App_Data\MovieDB.mdf" />
     <Content Include="App_Data\MovieDB_log.ldf">
@@ -102,6 +104,20 @@
     </Compile>
     <Compile Include="admin\addShow.aspx.designer.cs">
       <DependentUpon>addShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\allBookings.aspx.cs">
+      <DependentUpon>allBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\allBookings.aspx.designer.cs">
+      <DependentUpon>allBookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\allShows.aspx.cs">
+      <DependentUpon>allShows.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\allShows.aspx.designer.cs">
+      <DependentUpon>allShows.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\editMovie.aspx.cs">
       <DependentUpon>editMovie.aspx</DependentUpon>

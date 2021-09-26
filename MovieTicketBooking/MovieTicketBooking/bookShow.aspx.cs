@@ -11,30 +11,42 @@ namespace MovieTicketBooking
     public partial class bookShow : System.Web.UI.Page
     {
         int id;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
+
+            if(Session["User"]==null)
+            {
+                string returnURL = $"~/bookShow.aspx?id={id}";
+                Response.Redirect("~/signIn.aspx?returnURL="+returnURL);
+            }
+            
+
             MovieContext db = new MovieContext();
             Movie movie = db.Movies.FirstOrDefault(m => m.Id == id);
 
             DateTime today = DateTime.Now.Date;
             DateTime tomorrow = DateTime.Now.Date.AddDays(1);
+
             Dates.Items.Add(new ListItem() { Value = today.ToString(), Text = "Today" });
             Dates.Items.Add(new ListItem() { Value = tomorrow.ToString(), Text = "Tomorrow" });
 
             List<string> languages = movie.Language.Split(',').ToList();
+
             foreach(var lang in languages)
                 Languages.Items.Add(lang);
 
             SelectSeat.Visible = false;
-
             Session["Title"] = movie.Title;
+
         }
 
         protected void Next_Click(object sender, EventArgs e)
         {
             DateTime selectedDate = DateTime.Parse(Dates.SelectedValue);
             Session["SelectedDate"] = Dates.SelectedValue;
+            Session["selectedLanguage"] = Languages.SelectedValue;
             
             MovieContext db = new MovieContext();
 
@@ -49,7 +61,7 @@ namespace MovieTicketBooking
             {
                 Shows.Items.Add(new ListItem() { Value = show.Id.ToString(), Text = show.Time });
             }
-            
+
             SelectLanguage.Visible = false;
             SelectDate.Visible = false;
             SelectShow.Visible = true;
@@ -84,11 +96,14 @@ namespace MovieTicketBooking
                 }
             }
             SelectSeat.Visible = true;
+            PriceDisp.Text = "Price: $" + show.Price.ToString() + " / seat";
+            
         }
 
         protected void BookTickets_Click(object sender, EventArgs e)
         {
-            int showId = int.Parse(Session["ShowId"].ToString());
+/*            int total_count = 0; 
+*/            int showId = int.Parse(Session["ShowId"].ToString());
             string email = Session["User"].ToString();
             DateTime selectedDate = DateTime.Parse(Session["selectedDate"].ToString());
 
@@ -101,24 +116,38 @@ namespace MovieTicketBooking
             {
                 if (Seats.Items[i].Selected)
                 {
+                    /*total_count++;*/
                     Booking booking = new Booking()
                     {
                         BDate = selectedDate,
                         Show = show,
                         SeatNo = i + 1,
                         User = user
-
                     };
                     db.Bookings.Add(booking);
                 }
             }
             db.SaveChanges();
 
+            Session["Title"] = null;
             Session["ShowId"] = null;
-            Session["selectedDate"] = null;
+
+            if (Session["selectedDate"] != null)
+                Session["selectedDate"] = null;
+            if(Session["selectedLanguage"] != null)
+                Session["selectedLanguage"] = null;
 
             Response.Redirect("~/home.aspx");
-
         }
+
+        protected void Back_Click(object sender, EventArgs e)
+        {
+            Session["selectedDate"] = null;
+            Session["selectedLanguage"] = null;
+
+            Response.Redirect("~/bookShow.aspx?id=" + id);
+        }
+
+      
     }
 }
