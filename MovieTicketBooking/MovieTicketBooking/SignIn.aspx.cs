@@ -26,7 +26,12 @@ namespace MovieTicketBooking
                     Session["IsAdmin"] = user.IsAdmin;
                 }
                 Session["User"] = user.Email;
-                Response.Redirect("~/home.aspx");
+
+                string returnURL = Request.QueryString["returnURL"];
+                if (returnURL!=null)
+                    Response.Redirect(returnURL);
+                else
+                    Response.Redirect("~/home.aspx");
             }
             else
                 Error.Text = "Email or Password is Invalid";

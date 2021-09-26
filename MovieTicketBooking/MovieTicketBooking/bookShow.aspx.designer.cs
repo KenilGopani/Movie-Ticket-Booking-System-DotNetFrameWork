@@ -69,6 +69,15 @@ namespace MovieTicketBooking
         protected global::System.Web.UI.WebControls.Panel SelectShow;
 
         /// <summary>
+        /// Back control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Back;
+
+        /// <summary>
         /// Shows control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace MovieTicketBooking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel SelectSeat;
+
+        /// <summary>
+        /// PriceDisp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PriceDisp;
 
         /// <summary>
         /// Seats control.

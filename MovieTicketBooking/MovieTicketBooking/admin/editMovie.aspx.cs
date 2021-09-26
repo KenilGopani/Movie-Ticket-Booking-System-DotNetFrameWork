@@ -15,8 +15,10 @@ namespace MovieTicketBooking.admin
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["IsAdmin"] == null)
+                Response.Redirect("~/home.aspx");
+
             id = int.Parse(Request.QueryString["id"]);
-            
             MovieContext db = new MovieContext();
             
             var movie = db.Movies.FirstOrDefault(m => m.Id == id);

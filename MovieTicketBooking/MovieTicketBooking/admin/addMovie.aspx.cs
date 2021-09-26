@@ -12,7 +12,10 @@ namespace MovieTicketBooking.admin
     public partial class addMovie : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        { }
+        {
+            if(Session["IsAdmin"] == null)
+                Response.Redirect("~/home.aspx");
+        }
 
         protected void AddMovie_Click(object sender, EventArgs e)
         {
