@@ -17,17 +17,40 @@
             text-align: center;
             cursor: pointer;
             background-color: #454545;
+            /*background-color: #00aced;*/
             color: white;
             padding: 5px 10px;
             margin: 3px 3px;
             border-radius: 3px;
         }
-
         input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
-            background-color: rgb(12, 104, 238);
+            background-color: #00aced;
         }
 
         input[type="checkbox"]:disabled + label {
+            background-color: #a1a1a1;
+        }
+        /*/////////////////////////////////////////////////////*/
+        .new label {
+            vertical-align: middle;
+            text-align: center;
+            cursor: pointer;
+            background-color: azure;
+            border: 1px solid #00aced;
+            /*color: black;*/
+            padding: 5px 10px;
+            margin: 3px 3px;
+            width:43px;
+            height:40px;
+            border-radius: 4px;
+        }
+
+        
+        .new input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
+            background-color: #00aced;
+        }
+
+        .new input[type="checkbox"]:disabled + label {
             background-color: #a1a1a1;
         }
     </style>
@@ -61,14 +84,14 @@
             <hr class="text-primary" />
             <h4>Select Language</h4>
             <asp:RadioButtonList ID="Languages" runat="server" CssClass="myclass" RepeatDirection="Horizontal"></asp:RadioButtonList>
-            <asp:Button ID="Next" runat="server" CssClass="btn btn-primary my-4" Text="Next" OnClick="Next_Click" />
+            <asp:Button ID="Next" runat="server" CssClass="btn text-white my-4" style="background-color:#00aced" Text="Next" OnClick="Next_Click" />
         </asp:Panel>
 
         <div class="row">
             <div class="col-6">
                 <asp:Panel ID="SelectShow" runat="server" Visible="False" CssClass="d-flex justify-content-center">
                     <div class="">
-                        <asp:Button ID="Back" runat="server" CssClass="btn btn-primary my-3" Text="Back" OnClick="Back_Click" />
+                        <asp:Button ID="Back" runat="server" CssClass="btn my-3 text-white" style="background-color:#00aced" Text="Back" OnClick="Back_Click" />
                         <asp:RadioButtonList ID="Shows" runat="server" CssClass="myclass" OnSelectedIndexChanged="Shows_SelectedIndexChanged" AutoPostBack="True" RepeatDirection="Horizontal"></asp:RadioButtonList>
                     </div>
                 </asp:Panel>
@@ -77,13 +100,13 @@
             <div class="col-6">
                 <asp:Panel ID="SelectSeat" runat="server" Visible="False" CssClass="">
                     <div class="d-flex justify-content-center mb-2">
-                        <asp:Label ID="PriceDisp" runat="server" Font-Bold="False" ForeColor="#3333FF" Font-Size="Larger"></asp:Label><br />
+                        <asp:Label ID="PriceDisp" runat="server" Font-Bold="False" ForeColor="#00aced" Font-Size="Larger"></asp:Label><br />
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:CheckBoxList ID="Seats" runat="server" CssClass="myclass" RepeatColumns="10" RepeatDirection="Horizontal" ></asp:CheckBoxList>
+                        <asp:CheckBoxList ID="Seats" runat="server" CssClass="myclass new" RepeatColumns="10" RepeatDirection="Horizontal" ></asp:CheckBoxList>
                     </div>
-                    <div class="d-flex justify-content-center">
-                            <asp:Button ID="BookTickets" runat="server" Text="Book Tickets" CssClass="btn btn-danger" OnClick="BookTickets_Click" />
+                    <div class="d-flex justify-content-center mt-3">
+                            <asp:Button ID="BookTickets" runat="server" Text="Book Tickets" CssClass="btn text-white" style="background-color:#00aced" OnClick="BookTickets_Click" />
                     </div>
                 </asp:Panel>
             </div>
