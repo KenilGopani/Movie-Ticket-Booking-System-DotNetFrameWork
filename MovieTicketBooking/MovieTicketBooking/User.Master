@@ -32,7 +32,7 @@
                                 <li><a class="dropdown-item" href="/admin/addMovie.aspx">Add Movie </a></li>
                                 <li><a class="dropdown-item" href="/admin/addShow.aspx">Add Show</a></li>
                                 <li><a class="dropdown-item" href="/admin/allShows.aspx">All Shows</a></li>
-                                <li><a class="dropdown-item" href="/admin/allBookings">All Booking</a></li>
+                                <li><a class="dropdown-item" href="/admin/allBookings.aspx">All Booking</a></li>
                             </ul>
                         </li>
                         <%} %>
