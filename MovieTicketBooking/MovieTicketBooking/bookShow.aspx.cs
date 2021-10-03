@@ -14,6 +14,13 @@ namespace MovieTicketBooking
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if(Session["SelectedDate"] != null)
+                    Session["SelectedDate"] = null;
+                if (Session["SelectedLanguage"] != null)
+                    Session["SelectedLanguage"] = null;
+            }
             id = int.Parse(Request.QueryString["id"]);
 
             if(Session["User"]==null)
@@ -65,6 +72,7 @@ namespace MovieTicketBooking
             SelectLanguage.Visible = false;
             SelectDate.Visible = false;
             SelectShow.Visible = true;
+            Back.Visible = true;
 
         }
 
@@ -92,7 +100,7 @@ namespace MovieTicketBooking
                 if(bookedSeats.Contains(i+1))
                 {
                     Seats.Items[i].Enabled = false;
-                    Seats.Items[i].Selected = true;
+                   // Seats.Items[i].Selected = true;
                 }
             }
             SelectSeat.Visible = true;

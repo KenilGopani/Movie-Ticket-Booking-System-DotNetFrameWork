@@ -52,14 +52,18 @@
 
         .new input[type="checkbox"]:disabled + label {
             background-color: #a1a1a1;
+            cursor:none;
         }
     </style>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="Body" runat="server">
     <div class="container">
-        <h2 class="my-3"><%=Session["Title"].ToString() %></h2>
-        <h4>
+        <h2 class="my-3">
+            <asp:Button ID="Back" runat="server" CssClass="fas fa-arrow-left" Text="&#xf060;" Style="background-color:transparent; border:none"  OnClick="Back_Click" Visible="False" />
+            <%=Session["Title"].ToString() %>
+        </h2>
+        <h4 class="mx-5">
             <%if (Session["selectedDate"] != null)
                 { %>
 
@@ -90,8 +94,8 @@
         <div class="row">
             <div class="col-6">
                 <asp:Panel ID="SelectShow" runat="server" Visible="False" CssClass="d-flex justify-content-center">
-                    <div class="">
-                        <asp:Button ID="Back" runat="server" CssClass="btn my-3 text-white" style="background-color:#00aced" Text="Back" OnClick="Back_Click" />
+                    <div class="my-5">
+                        <h2 class="my-3 text-center" >Available Shows</h2>
                         <asp:RadioButtonList ID="Shows" runat="server" CssClass="myclass" OnSelectedIndexChanged="Shows_SelectedIndexChanged" AutoPostBack="True" RepeatDirection="Horizontal"></asp:RadioButtonList>
                     </div>
                 </asp:Panel>
