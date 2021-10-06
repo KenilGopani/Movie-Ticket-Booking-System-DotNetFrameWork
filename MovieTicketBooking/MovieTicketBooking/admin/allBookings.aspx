@@ -6,12 +6,12 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Body" runat="server">
 
-    <asp:SqlDataSource ID="ForBookings" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDB %>" SelectCommand="SELECT Bookings.Id, Bookings.BDate, Movies.Title, Shows.Time, Shows.Price, Shows.Language, Bookings.SeatNo, Users.Email, Users.FirstName, Users.LastName FROM Bookings INNER JOIN Shows ON Bookings.Show_Id = Shows.Id INNER JOIN Movies ON Shows.Movie_Id = Movies.Id INNER JOIN Users ON Bookings.User_Id = Users.Id"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" CssClass="w-100" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="Id" DataSourceID="ForBookings" ForeColor="Black" GridLines="Vertical" AllowSorting="True">
+    <asp:SqlDataSource ID="ForBookings" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDB %>" SelectCommand="SELECT Bookings.Id, Bookings.Date, Movies.Title, Shows.Time, Shows.Price, Shows.Language, Bookings.SeatNo, Users.Email, Users.FirstName, Users.LastName FROM Bookings INNER JOIN Shows ON Bookings.Show_Id = Shows.Id INNER JOIN Movies ON Shows.Movie_Id = Movies.Id INNER JOIN Users ON Bookings.User_Id = Users.Id"></asp:SqlDataSource>
+    <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" CssClass="container my-3 table" DataKeyNames="Id" DataSourceID="ForBookings" AllowSorting="True" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="BDate" HeaderText="BDate" SortExpression="BDate" />
+            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
             <asp:BoundField DataField="Time" HeaderText="Time" SortExpression="Time" />
             <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />

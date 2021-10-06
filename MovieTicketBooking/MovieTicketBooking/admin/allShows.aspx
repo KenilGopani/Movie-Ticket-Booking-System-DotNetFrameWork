@@ -8,7 +8,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Body" runat="server">
 
     <asp:SqlDataSource ID="ForShows" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDB %>" SelectCommand="SELECT Shows.Id, Shows.StartDate, Shows.EndDate, Shows.Time, Shows.Price, Shows.Language, Movies.Title, Movies.ReleaseDate FROM Shows INNER JOIN Movies ON Shows.Movie_Id = Movies.Id"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" CssClass="w-100" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ForShows" GridLines="Vertical" AutoGenerateColumns="False" DataKeyNames="Id" ForeColor="Black" ShowHeaderWhenEmpty="True">
+    <asp:GridView ID="GridView1" runat="server" CssClass="container my-3 table" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="ForShows" GridLines="Vertical" AutoGenerateColumns="False" DataKeyNames="Id" ForeColor="Black" ShowHeaderWhenEmpty="True">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />

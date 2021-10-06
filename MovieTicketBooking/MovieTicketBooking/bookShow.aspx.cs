@@ -32,17 +32,22 @@ namespace MovieTicketBooking
 
             MovieContext db = new MovieContext();
             Movie movie = db.Movies.FirstOrDefault(m => m.Id == id);
+            
+            Dates.Items.Clear();
+            DateTime day;
+            for(int i = 0; i < 3; i++)
+            {
+                day = DateTime.Now.Date.AddDays(i+1);
+                Dates.Items.Add(new ListItem() { Value = day.ToString(), Text = day.ToString("ddd, dd MMM") });
 
-            DateTime today = DateTime.Now.Date;
-            DateTime tomorrow = DateTime.Now.Date.AddDays(1);
-
-            Dates.Items.Add(new ListItem() { Value = today.ToString(), Text = "Today" });
-            Dates.Items.Add(new ListItem() { Value = tomorrow.ToString(), Text = "Tomorrow" });
+            }
+            Dates.Items[0].Selected = true;
 
             List<string> languages = movie.Language.Split(',').ToList();
-
+            Languages.Items.Clear();
             foreach(var lang in languages)
                 Languages.Items.Add(lang);
+            Languages.Items[0].Selected = true;
 
             SelectSeat.Visible = false;
             Session["Title"] = movie.Title;
@@ -51,6 +56,7 @@ namespace MovieTicketBooking
 
         protected void Next_Click(object sender, EventArgs e)
         {
+           
             DateTime selectedDate = DateTime.Parse(Dates.SelectedValue);
             Session["SelectedDate"] = Dates.SelectedValue;
             Session["selectedLanguage"] = Languages.SelectedValue;
@@ -85,7 +91,7 @@ namespace MovieTicketBooking
             Session["ShowId"] = show.Id.ToString();
 
             DateTime selectedDate = DateTime.Parse(Session["selectedDate"].ToString());
-            var bookings = db.Bookings.Where(b => b.Show.Id == show.Id && DateTime.Compare(b.BDate,selectedDate) == 0).ToList();
+            var bookings = db.Bookings.Where(b => b.Show.Id == show.Id && DateTime.Compare(b.Date,selectedDate) == 0).ToList();
             List<int> bookedSeats = new List<int>();
 
             foreach(var book in bookings)
@@ -127,7 +133,7 @@ namespace MovieTicketBooking
                     /*total_count++;*/
                     Booking booking = new Booking()
                     {
-                        BDate = selectedDate,
+                        Date = selectedDate,
                         Show = show,
                         SeatNo = i + 1,
                         User = user
