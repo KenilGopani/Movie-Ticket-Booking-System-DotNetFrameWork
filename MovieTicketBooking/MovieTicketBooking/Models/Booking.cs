@@ -15,7 +15,7 @@ namespace MovieTicketBooking.Models
 
         public User User { get; set; }
         public Show Show { get; set; }
-        public DateTime BDate { get; set; }
+        public DateTime Date { get; set; }
         public int SeatNo { get; set; }
 
     }
