@@ -11,47 +11,43 @@ namespace MovieTicketBooking
     public partial class bookShow : System.Web.UI.Page
     {
         int id;
-        
         protected void Page_Load(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"]);
             if (!IsPostBack)
             {
                 if(Session["SelectedDate"] != null)
                     Session["SelectedDate"] = null;
                 if (Session["SelectedLanguage"] != null)
                     Session["SelectedLanguage"] = null;
-            }
-            id = int.Parse(Request.QueryString["id"]);
 
-            if(Session["User"]==null)
-            {
-                string returnURL = $"~/bookShow.aspx?id={id}";
-                Response.Redirect("~/signIn.aspx?returnURL="+returnURL);
-            }
+                if(Session["User"]==null)
+                {
+                    string returnURL = $"~/bookShow.aspx?id={id}";
+                    Response.Redirect("~/signIn.aspx?returnURL="+returnURL);
+                }
             
-
-            MovieContext db = new MovieContext();
-            Movie movie = db.Movies.FirstOrDefault(m => m.Id == id);
+                MovieContext db = new MovieContext();
+                Movie movie = db.Movies.FirstOrDefault(m => m.Id == id);
             
-            Dates.Items.Clear();
-            DateTime day;
-            for(int i = 0; i < 3; i++)
-            {
-                day = DateTime.Now.Date.AddDays(i+1);
-                Dates.Items.Add(new ListItem() { Value = day.ToString(), Text = day.ToString("ddd, dd MMM") });
+                Dates.Items.Clear();
+                DateTime day;
+                for(int i = 0; i < 3; i++)
+                {
+                    day = DateTime.Now.Date.AddDays(i+1);
+                    Dates.Items.Add(new ListItem() { Value = day.ToString(), Text = day.ToString("ddd, dd MMM") });
+                }
+                Dates.Items[0].Selected = true;
 
-            }
-            Dates.Items[0].Selected = true;
-
-            List<string> languages = movie.Language.Split(',').ToList();
-            Languages.Items.Clear();
-            foreach(var lang in languages)
+                List<string> languages = movie.Language.Split(',').ToList();
+                Languages.Items.Clear();
+                foreach(var lang in languages)
                 Languages.Items.Add(lang);
-            Languages.Items[0].Selected = true;
+                Languages.Items[0].Selected = true;
 
-            SelectSeat.Visible = false;
-            Session["Title"] = movie.Title;
-
+                SelectSeat.Visible = false;
+                Session["Title"] = movie.Title;
+            }
         }
 
         protected void Next_Click(object sender, EventArgs e)
@@ -95,9 +91,7 @@ namespace MovieTicketBooking
             List<int> bookedSeats = new List<int>();
 
             foreach(var book in bookings)
-            {
                 bookedSeats.Add(book.SeatNo);
-            }
 
             Seats.Items.Clear();
             for (int i = 0; i < 100; i++)
@@ -158,7 +152,6 @@ namespace MovieTicketBooking
         {
             Session["selectedDate"] = null;
             Session["selectedLanguage"] = null;
-
             Response.Redirect("~/bookShow.aspx?id=" + id);
         }
 

@@ -17,7 +17,7 @@
     <form runat="server">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="/home.aspx">Navbar</a>
+                <a class="navbar-brand" href="/home.aspx">iCinema</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
